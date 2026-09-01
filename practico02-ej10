@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Declaracion de variables
+    float horas, pagoPorHora, salarioBase, bono = 0.0f, salarioTotal;
+
+    // Entrada de datos
+    cout << "Ingrese las horas trabajadas: ";
+    cin >> horas;
+
+    cout << "Ingrese el pago por hora: ";
+    cin >> pagoPorHora;
+
+    // Proceso
+    salarioBase = horas * pagoPorHora;
+
+    if (horas > 40) {
+        bono = salarioBase * 0.10f;
+    }
+
+    salarioTotal = salarioBase + bono;
+
+    // Salida de datos
+    cout << "El salario total a pagar es: " << salarioTotal << " Bs" << endl;
+
+    return 0;
+}
