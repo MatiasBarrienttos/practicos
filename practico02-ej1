@@ -1,0 +1,58 @@
+#include <iostream>
+
+#include <string>
+
+
+
+using namespace std;
+
+int main() {
+
+//Declaracion de variables
+
+string nombre;
+
+int edad;
+
+string carrera;
+
+int semestre;
+
+//Entrada de datos
+
+cout <<"Ingrese el nombre del estudiante: ";
+
+getline(cin, nombre);
+
+cout <<"Ingrese la edad: ";
+
+cin >> edad;
+
+cout <<"Ingrese la carrera del estudiante: ";
+
+cin >> carrera;
+
+cout <<"Ingrese su semestre: ";
+
+cin >> semestre;
+
+//Salida de datos
+
+cout << "\n--- Registro Exitoso ---" << endl;
+
+cout << "Nombre: " << nombre << endl;
+
+cout << "Edad: " << edad << endl;
+
+cout << "Carrera: " << carrera << endl;
+
+cout << "Semestre: " << semestre << endl;
+
+
+
+return 0;
+
+
+
+} 
+
