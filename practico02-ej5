@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Declaracion de variables
+    int cantidad;
+    float totalPagar;
+
+    // Entrada de datos
+    cout << "Ingrese la cantidad de cuadernos que desea comprar: ";
+    cin >> cantidad;
+
+    // Proceso
+    totalPagar = cantidad * 12.0f;
+
+    // Salida de datos
+    cout << "El total a pagar es: " << totalPagar << " Bs" << endl;
+
+    return 0;
+}
