@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Declaracion de variables
+    float montoCompra, descuento = 0.0f, totalPagar;
+
+    // Entrada de datos
+    cout << "Ingrese el monto total de la compra: ";
+    cin >> montoCompra;
+
+    // Proceso
+    if (montoCompra > 100) {
+        descuento = montoCompra * 0.10f;
+    }
+
+    totalPagar = montoCompra - descuento;
+
+    // Salida de datos
+    cout << "El total final a pagar es: " << totalPagar << " Bs" << endl;
+
+    return 0;
+}
