@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double C, T, cuota, monto_total, interes_total, factor;
+    int N;
+
+    cout << "--- Calculo de Credito de Consumo ---" << endl;
+    
+    cout << "Ingrese el capital prestado (C): ";
+    cin >> C;
+    
+    cout << "Ingrese la tasa de interes mensual (T, ej. 0.05 para 5%): ";
+    cin >> T;
+    
+    cout << "Ingrese el numero de cuotas (N): ";
+    cin >> N;
+
+    
+    factor = pow(1 + T, N);
+    
+    
+    cuota = C * (T * factor) / (factor - 1);
+    monto_total = cuota * N;
+    interes_total = monto_total - C;
+
+    cout << "\n--- Resultados del Credito ---" << endl;
+    cout << "Cuota mensual a pagar: " << cuota << endl;
+    cout << "Monto total a pagar al final del plazo: " << monto_total << endl;
+    cout << "Interes total generado: " << interes_total << endl;
+
+    return 0;
+}
