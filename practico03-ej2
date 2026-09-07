@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double R, H;
+    const double PI = 3.141592653589793;
+
+    cout << "--- Calculo de Cilindro ---" << endl;
+    cout << "Ingrese el radio (R): ";
+    cin >> R;
+    cout << "Ingrese la altura (H): ";
+    cin >> H;
+
+    // Calculos aplicando las formulas
+    double area_lateral = 2 * PI * R * H;
+    double area_total = 2 * PI * R * (R + H);
+    double volumen = PI * pow(R, 2) * H;
+
+    cout << "\nResultados:" << endl;
+    cout << "Area lateral: " << area_lateral << endl;
+    cout << "Area total: " << area_total << endl;
+    cout << "Volumen: " << volumen << endl;
+
+    return 0;
+}
