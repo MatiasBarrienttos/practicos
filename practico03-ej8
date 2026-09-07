@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double A, B, C_val, D, E, F;
+    double delta, deltaX, deltaY;
+
+    cout << "--- Sistema de 2 Ecuaciones (Ax + By = C  y  Dx + Ey = F) ---" << endl;
+    cout << "Ingrese coeficientes A, B y C de la primera ecuacion (separados por espacio): ";
+    cin >> A >> B >> C_val;
+    cout << "Ingrese coeficientes D, E y F de la segunda ecuacion (separados por espacio): ";
+    cin >> D >> E >> F;
+
+    
+    delta = (A * E) - (B * D);
+    deltaX = (C_val * E) - (B * F);
+    deltaY = (A * F) - (C_val * D);
+
+   
+    if (delta != 0) {
+        double X = deltaX / delta;
+        double Y = deltaY / delta;
+        cout << "\nEl sistema tiene una SOLUCION UNICA:" << endl;
+        cout << "X = " << X << endl;
+        cout << "Y = " << Y << endl;
+    } 
+    else { // Si delta es 0, hay dos posibilidades
+        if (deltaX == 0 && deltaY == 0) {
+            cout << "\nEl sistema tiene INFINITAS SOLUCIONES (las rectas son coincidentes)." << endl;
+        } 
+        else {
+            cout << "\nEl sistema NO TIENE SOLUCION (las rectas son paralelas)." << endl;
+        }
+    }
+
+    return 0;
+}
