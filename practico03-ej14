@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int pollo, carne, queso, refresco, agua;
+
+    cout << "--- PEDIDOS DE LA SALTENERIA ---" << endl;
+    cout << "Cuantas saltenas de pollo quiere? "; 
+    cin >> pollo;
+    
+    cout << "Cuantas saltenas de carne quiere? "; 
+    cin >> carne;
+    
+    cout << "Cuantas empanadas de queso quiere? "; 
+    cin >> queso;
+    
+    cout << "Cuantos refrescos quiere? "; 
+    cin >> refresco;
+    
+    cout << "Cuantas aguas quiere? "; 
+    cin >> agua;
+
+   
+    double total_pollo = pollo * 3.50;
+    double total_carne = carne * 4.00;
+    double total_queso = queso * 3.00;
+    double total_refresco = refresco * 5.00;
+    double total_agua = agua * 3.00;
+
+    
+    int total_items = pollo + carne + queso + refresco + agua;
+    double total_pagar = total_pollo + total_carne + total_queso + total_refresco + total_agua;
+
+    
+    cout << "\n--- TICKET DE COMPRA ---" << endl;
+    cout << "Saltena de Pollo: " << pollo << " unidades = Bs " << total_pollo << endl;
+    cout << "Saltena de Carne: " << carne << " unidades = Bs " << total_carne << endl;
+    cout << "Empanada de Queso: " << queso << " unidades = Bs " << total_queso << endl;
+    cout << "Refresco: " << refresco << " unidades = Bs " << total_refresco << endl;
+    cout << "Agua Mineral: " << agua << " unidades = Bs " << total_agua << endl;
+    
+    cout << "------------------------" << endl;
+    cout << "Cantidad total de productos: " << total_items << endl;
+    cout << "TOTAL A PAGAR: Bs " << total_pagar << endl;
+
+    return 0;
+}
