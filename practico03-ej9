@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int total_minutos, dias, horas, minutos_restantes;
+
+    cout << "--- Conversor de Tiempo ---" << endl;
+    cout << "Ingrese la cantidad total de MINUTOS: ";
+    cin >> total_minutos;
+
+
+    dias = total_minutos / (24 * 60);                  
+    minutos_restantes = total_minutos % (24 * 60);    
+    
+    horas = minutos_restantes / 60;                    
+    minutos_restantes = minutos_restantes % 60;       
+
+    cout << "\nResultado: " << total_minutos << " minutos equivalen a:" << endl;
+    cout << dias << " dias, " << horas << " horas, " << minutos_restantes << " minutos." << endl;
+
+    return 0;
+}
