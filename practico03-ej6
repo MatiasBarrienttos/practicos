@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip> 
+
+using namespace std;
+
+int main() {
+    double C, F, K, Ra;
+
+    cout << "--- Conversor de Temperaturas ---" << endl;
+    cout << "Ingrese la temperatura en grados Celsius (C): ";
+    cin >> C;
+
+    
+    F = (C * 9.0 / 5.0) + 32.0;
+    K = C + 273.15;
+    Ra = (C + 273.15) * 9.0 / 5.0;
+
+  
+    cout << fixed << setprecision(2);
+
+    cout << "\nResultados de la conversion:" << endl;
+    cout << "Fahrenheit (F): " << F << endl;
+    cout << "Kelvin (K): " << K << endl;
+    cout << "Rankine (Ra): " << Ra << endl;
+
+    return 0;
+}
