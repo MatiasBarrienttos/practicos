@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int dia, mes, anio;
+
+    cout << "--- Determinacion de Estacion del Ano (Bolivia) ---" << endl;
+    cout << "Ingrese el dia (1-31): ";
+    cin >> dia;
+    cout << "Ingrese el mes (1-12): ";
+    cin >> mes;
+    cout << "Ingrese el ano: ";
+    cin >> anio;
+
+    cout << "\nLa fecha " << dia << "/" << mes << "/" << anio << " corresponde a la estacion de: ";
+
+    
+    if ((mes == 3 && dia >= 21) , mes == 4 , mes == 5 , (mes == 6 && dia < 21)) {
+        cout << "OTONO" << endl;
+    } 
+    else if ((mes == 6 && dia >= 21) , mes == 7, mes == 8 , (mes == 9 && dia < 21)) {
+        cout << "INVIERNO" << endl;
+    } 
+    else if ((mes == 9 && dia >= 21) , mes == 10 , mes == 11 , (mes == 12 && dia < 21)) {
+        cout << "PRIMAVERA" << endl;
+    } 
+    else if ((mes == 12 && dia >= 21) , mes == 1 , mes == 2 , (mes == 3 && dia < 21)) {
+        cout << "VERANO" << endl;
+    } 
+    else {
+        cout << "Fecha invalida." << endl;
+    }
+
+    return 0;
+}
