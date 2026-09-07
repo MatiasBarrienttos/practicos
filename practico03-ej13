@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double a, b, c, discriminante, x1, x2;
+
+    cout << "--- Ecuacion Cuadratica Completa ---" << endl;
+    cout << "Ingrese coeficiente a: "; cin >> a;
+    cout << "Ingrese coeficiente b: "; cin >> b;
+    cout << "Ingrese coeficiente c: "; cin >> c;
+
+    cout << "\nResultados:" << endl;
+
+    if (a == 0 && b == 0) {
+        if (c == 0) {
+            cout << "Ecuacion degenerada (identidad). Tiene infinitas soluciones." << endl;
+        } else {
+            cout << "Ecuacion degenerada. No tiene solucion (" << c << " != 0)." << endl;
+        }
+    } 
+    else if (a == 0 && b != 0) {
+        x1 = -c / b;
+        cout << "Ecuacion lineal. Tiene una unica solucion:" << endl;
+        cout << "x = " << x1 << endl;
+    } 
+    else {
+        
+        discriminante = (b * b) - (4 * a * c);
+
+        if (discriminante > 0) {
+            x1 = (-b + sqrt(discriminante)) / (2 * a);
+            x2 = (-b - sqrt(discriminante)) / (2 * a);
+            cout << "Dos raices reales y distintas:" << endl;
+            cout << "x1 = " << x1 << "\nx2 = " << x2 << endl;
+        } 
+        else if (discriminante == 0) {
+            x1 = -b / (2 * a);
+            cout << "Una raiz real doble:" << endl;
+            cout << "x = " << x1 << endl;
+        } 
+        else {
+            double pReal = -b / (2 * a);
+            double pImag = sqrt(-discriminante) / (2 * a);
+            cout << "Dos raices complejas conjugadas:" << endl;
+            cout << "x1 = " << pReal << " + " << pImag << "i" << endl;
+            cout << "x2 = " << pReal << " - " << pImag << "i" << endl;
+        }
+    }
+
+    return 0;
+}
