@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double kWh, tarifa, monto_pagar;
+    string categoria;
+    const double CARGO_FIJO = 8.00;
+
+    cout << "--- Calculo de Tarifa Electrica ---" << endl;
+    cout << "Ingrese el consumo mensual en kWh: ";
+    cin >> kWh;
+
+    if (kWh == 0) {
+        cout << "SIN CONSUMO REGISTRADO" << endl;
+        return 0; // Termina el programa
+    } 
+    else if (kWh < 0) {
+        cout << "Error: El consumo no puede ser negativo." << endl;
+        return 1;
+    }
+    else if (kWh <= 100) {
+        tarifa = 0.30;
+        categoria = "Categoria basica";
+    } 
+    else if (kWh <= 300) {
+        tarifa = 0.50;
+        categoria = "Categoria media";
+    } 
+    else if (kWh <= 600) {
+        tarifa = 0.75;
+        categoria = "Categoria alta";
+    } 
+    else {
+        tarifa = 1.10;
+        categoria = "Categoria industrial";
+    }
+
+
+    monto_pagar = (kWh * tarifa) + CARGO_FIJO;
+
+    cout << fixed << setprecision(2);
+    cout << "\nResultados:" << endl;
+    cout << "Categoria: " << categoria << endl;
+    cout << "Tarifa aplicada: Bs " << tarifa << " / kWh" << endl;
+    cout << "Cargo fijo: Bs " << CARGO_FIJO << endl;
+    cout << "Monto total a pagar: Bs " << monto_pagar << endl;
+
+    return 0;
+}
