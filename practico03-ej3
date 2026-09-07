@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double parcial1, parcial2, examen_final, proyecto, nota_final;
+
+    cout << "--- Calculo de Nota Final ---" << endl;
+    
+    cout << "Ingrese la nota del Parcial 1 (maximo 25): ";
+    cin >> parcial1;
+    
+    cout << "Ingrese la nota del Parcial 2 (maximo 25): ";
+    cin >> parcial2;
+    
+    cout << "Ingrese la nota del Examen Final (maximo 30): ";
+    cin >> examen_final;
+    
+    cout << "Ingrese la nota del Proyecto Integrador (maximo 20): ";
+    cin >> proyecto;
+
+   
+    nota_final = parcial1 + parcial2 + examen_final + proyecto;
+
+    cout << "\nNota final obtenida: " << nota_final << " / 100" << endl;
+
+    
+    if (nota_final >= 51) {
+        cout << "Estado: APROBADO" << endl;
+    } else {
+        cout << "Estado: REPROBADO" << endl;
+    }
+
+    return 0;
+}
