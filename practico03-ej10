@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath> 
+
+using namespace std;
+
+int main() {
+    int dia1, mes1, dia2, mes2;
+    int dias_totales_1, dias_totales_2, diferencia_total;
+    int meses_dif, dias_dif;
+
+    cout << "--- Diferencia entre Dos Fechas ---" << endl;
+    
+    cout << "Ingrese la FECHA INICIAL (DD MM separados por espacio): ";
+    cin >> dia1 >> mes1;
+    
+    cout << "Ingrese la FECHA FINAL (DD MM separados por espacio): ";
+    cin >> dia2 >> mes2;
+
+   
+    dias_totales_1 = ((mes1 - 1) * 30) + dia1;
+    dias_totales_2 = ((mes2 - 1) * 30) + dia2;
+
+
+    diferencia_total = abs(dias_totales_2 - dias_totales_1);
+
+   
+    meses_dif = diferencia_total / 30;
+    dias_dif = diferencia_total % 30;
+
+    cout << "\nDiferencia: " << meses_dif << " meses y " << dias_dif << " dias." << endl;
+
+    return 0;
+}
