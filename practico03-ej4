@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string nombre;
+    double salario, aguinaldo;
+    int meses;
+
+    cout << "--- Calculo de Aguinaldo Navideno (Normativa Boliviana) ---" << endl;
+    
+    cout << "Ingrese el nombre del trabajador: ";
+    getline(cin, nombre);
+    
+    cout << "Ingrese el salario mensual (Bs.): ";
+    cin >> salario;
+    
+    cout << "Ingrese los meses trabajados en el ano (1 a 12): ";
+    cin >> meses;
+
+    if (meses < 1 || meses > 12) {
+        cout << "Error: La cantidad de meses debe estar entre 1 y 12." << endl;
+        return 1;
+    }
+
+    
+    aguinaldo = (salario * meses) / 12.0;
+
+    cout << "\nTrabajador: " << nombre << endl;
+    cout << "Aguinaldo correspondiente: Bs. " << aguinaldo << endl;
+
+    return 0;
+}
