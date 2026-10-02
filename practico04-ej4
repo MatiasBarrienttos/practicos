@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, S = 0;
+    cout << "Ingrese el valor de N: ";
+    cin >> N;
+    
+    for (int i = 1; i <= N; i++) {
+        if (i % 2 != 0) {
+            S += i; // Suma si es impar
+        } else {
+            S -= i; // Resta si es par
+        }
+    }
+    
+    cout << "El resultado de la serie es: " << S << endl;
+    return 0;
+}
