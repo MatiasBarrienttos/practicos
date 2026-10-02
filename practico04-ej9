@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double X, S = 0;
+    int n;
+    cout << "Ingrese el valor de X: ";
+    cin >> X;
+    cout << "Ingrese el valor de n: ";
+    cin >> n;
+    
+    for (int i = 1; i <= n; i++) {
+        double fact = 1;
+        for (int j = 1; j <= i; j++) {
+            fact *= j;
+        }
+        
+        double termino = pow(X, i) / fact;
+        if (i % 2 != 0) {
+            S += termino;
+        } else {
+            S -= termino;
+        }
+    }
+    
+    cout << "El resultado de la serie es: " << S << endl;
+    return 0;
+}
