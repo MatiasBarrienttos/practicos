@@ -1,0 +1,89 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+string UNIDADES[] = {"", "uno", "dos", "tres", "cuatro",
+"cinco", "seis", "siete", "ocho", "nueve"};
+
+string NUMERO(int n) {
+    string especiales[] = {"diez", "once", "doce", "trece",
+    "catorce", "quince", "dieciseis", "diecisiete",
+    "dieciocho", "diecinueve"};
+
+    string decenas[] = {"", "", "veinte", "treinta",
+    "cuarenta", "cincuenta", "sesenta", "setenta",
+    "ochenta", "noventa"};
+
+    string centenas[] = {"", "ciento", "doscientos",
+    "trescientos", "cuatrocientos", "quinientos",
+    "seiscientos", "setecientos", "ochocientos",
+    "novecientos"};
+
+    if (n == 0) return "cero";
+
+    if (n < 10) return UNIDADES[n];
+
+    if (n < 20) return especiales[n - 10];
+
+    if (n < 30) {
+        if (n == 20) return "veinte";
+        return "veinti" + UNIDADES[n - 20];
+    }
+
+    if (n < 100) {
+        if (n % 10 == 0) return decenas[n / 10];
+        return decenas[n / 10] + " y " + UNIDADES[n % 10];
+    }
+
+    if (n == 100) return "cien";
+
+    if (n < 1000) {
+        if (n % 100 == 0) return centenas[n / 100];
+        return centenas[n / 100] + " " + NUMERO(n % 100);
+    }
+
+    if (n < 10000) {
+        if (n < 2000)
+            return "mil " + (n % 1000 == 0 ? "" : NUMERO(n % 1000));
+
+        return NUMERO(n / 1000) + " mil " +
+        (n % 1000 == 0 ? "" : NUMERO(n % 1000));
+    }
+
+    return "";
+}
+
+string A_UNO(string s) {
+    int n = s.length();
+
+    if (n >= 3 && s.substr(n - 3) == "uno")
+        return s.substr(0, n - 3) + "un";
+
+    return s;
+}
+
+int main() {
+    double R;
+    int entero, decimal;
+
+    cout << "Ingrese el monto: ";
+    cin >> R;
+
+    R = round(R * 100) / 100;
+
+    entero = (int)R;
+    decimal = round((R - entero) * 100);
+
+    if (entero >= 0 && entero <= 9999) {
+        string texto = NUMERO(entero);
+        texto = A_UNO(texto);
+
+        cout << texto << " bolivianos "
+             << decimal << "/100";
+    }
+    else {
+        cout << "Monto fuera de rango";
+    }
+
+    return 0;
+}
